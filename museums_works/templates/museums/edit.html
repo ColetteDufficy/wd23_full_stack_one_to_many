@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form action="/museums/{{ museum.id }}" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" value="{{ museum.name }}" required autofocus>
+        </div>
+
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" value="{{ museum.address}}" required>
+        </div>
+
+        <div>
+            <button type="submit">Update Museum</button>
+        </div>
+
+    </form>
+
+
+{% endblock content %}

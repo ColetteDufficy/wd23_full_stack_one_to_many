@@ -67,3 +67,28 @@ def delete_all():
     sql = "DELETE FROM museums" 
     run_sql(sql)
     
+    
+#DELETE_BY_ID
+def delete(id):
+    sql = """
+        DELETE FROM museums 
+        WHERE id = %s
+    """ 
+    values = [id]
+    run_sql(sql, values)
+    
+
+#UPDATE 
+def update(museum):
+    sql = """
+        UPDATE museums 
+        SET (name, address) = (%s, %s) 
+        WHERE id = %s
+    """
+    values = [
+        museum.name, 
+        museum.address, 
+        museum.id
+        ]
+    run_sql(sql, values) 
+    
