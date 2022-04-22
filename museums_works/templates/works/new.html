@@ -21,7 +21,7 @@
   <div>
     <label for="museum">Museum:</label>
     <select id="museum" name="museum_id">
-      {% for museum in museums %}
+      {% for museum in all_museums %}
         <option value="{{ museum.id }}">{{ museum.name }}</option>
       {% endfor %}
     </select>

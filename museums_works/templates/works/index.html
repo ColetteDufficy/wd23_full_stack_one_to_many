@@ -2,7 +2,7 @@
 {% block content %}
 
 
-{% for work in works %}
+{% for work in all_works %}
   <div>
     <a href="/works/{{work.id}}">{{work.get_details()}}</a>
   </div>

@@ -2,7 +2,7 @@
 {% block content %}
 
 
-{% for museum in museums %}
+{% for museum in all_museums %}
   <div>
     <div>
       <a href="/museums/{{museum.id}}">{{museum.name}}</a>
@@ -11,6 +11,7 @@
       </address>
     </div>
   </div>
+  <hr>
 {% endfor %}
 
 {% endblock %}
