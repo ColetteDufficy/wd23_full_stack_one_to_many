@@ -48,11 +48,29 @@ def create_work():
 # SHOW
 # GET '/works/<id>'
 
-# EDIT
+# EDIT (EDIT and UPDATE are combined)
 # GET '/works/<id>/edit'
+# Step 1:
+@works_blueprint.route("/works/<id>/edit", methods=["GET"])
+def edit_work(id):
+    work = work_repository.select(id) #singular work, becasue we only want to identify ONE piece of work, by its id number
+    museums = museum_repository.select_all() #users is plural cos we want ALL users
+    return render_template("works/edit.html", work = work, all_museums = museums)
+
 
 # UPDATE
 # PUT '/works/<id>'
+@works_blueprint.route("/works/<id>", methods=['POST'])
+def update_work(id):
+    title = request.form['title']
+    artist = request.form['artist']
+    year = request.form['year']
+    museum_id = request.form['museum_id']
+    
+    museum = museum_repository.select(museum_id) 
+    work = Work(title, artist, year, museum, id) 
+    work_repository.update(work)
+    return redirect('/works')
 
 
 

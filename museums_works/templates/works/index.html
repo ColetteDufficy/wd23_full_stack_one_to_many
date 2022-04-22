@@ -4,8 +4,37 @@
 
 {% for work in all_works %}
   <div>
-    <a href="/works/{{work.id}}">{{work.get_details()}}</a>
   </div>
+  
+  
+  <div>
+    <div>
+      <a href="/works/{{work.id}}">{{ work.title }}</a>
+      <!-- <a href="/works/&&work.id&&">&&work.get_details()&&</a> -->
+      <address>
+        <p>Artist: {{work.artist}}</p>
+        <p>{{ work.year }}</p>
+        <p>On display at: {{work.museum.name}}</p>
+      </address>
+    </div>
+
+    <div class="buttons">
+      <form action="/works/{{work.id}}/edit" method="GET">
+        <input type="submit" value="Edit">
+      </form>
+    
+    <br>
+
+      <form action="/works/{{work.id}}/delete" method="POST">
+        <input type="submit" value="Delete">
+      </form>
+
+    </div>
+
+  </div>
+  <hr>
+
+
 {% endfor %}
 
 {% endblock %}
