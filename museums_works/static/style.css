@@ -1,3 +1,136 @@
-body{
-  font-family: "Helvetica", arial, sans-serif; font-size: 16px;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600&family=Water+Brush&display=swap');
+
+* {
+  box-sizing: border-box;
 }
+
+body {
+  font-family: Montserrat, sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: rgb(201, 198, 198);
+  margin: 0;
+  padding: 0;
+  border: 10px;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+  background-color: rgb(46, 47, 47);
+}
+
+#logo {
+  font-family: Water Brush;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+#logo a {
+  color: white;
+}
+
+#logo a:hover {
+  color: rgb(87, 87, 87);
+}
+
+.menu {
+  font-size: 14px;
+  list-style: none;
+}
+
+.menu li {
+  display: inline-block;
+  padding: 0 20px;
+  font-weight: 100;
+}
+
+.menu li a:hover {
+  color: rgb(162, 163, 163);
+}
+
+.menu li a {
+  color: white;
+}
+
+.container{
+  margin: 30px;
+}
+
+.new_form {
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
+  border: 1px rgb(46, 47, 47) solid;
+  padding: 20px;
+  font-size: 14px;
+  color: rgb(46, 47, 47) ;
+  flex-flow: row wrap;
+  align-items: center;
+  }
+
+
+
+/* Style the input fields */
+.new_form input[type=text], input[type=number] {
+  border: 1px rgb(46, 47, 47) solid;
+  vertical-align: middle;
+  margin: 5px;
+  padding: 5px;
+  width: 350px;
+} 
+
+
+section {
+  font-family: Water Brush;
+  color: rgb(46, 47, 47);
+  font-size: 45px;
+  text-align: center;
+}
+
+.container_details {
+  /* border: rgb(255, 0, 217) solid 5px; */
+  display: flex;
+  flex-flow: wrap; 
+  align-items: center; 
+}
+
+.container_details h4 {
+  font-weight: 600;
+  font-style: normal;
+  color: rgb(46, 47, 47);
+  font-size: 16px;
+}
+
+.container_details p {
+  font-weight: 300;
+  font-style: normal;
+  color: rgb(46, 47, 47);
+  font-size: 13px;
+}
+
+.full_item {
+  /* border: green 2px solid; */
+  display: flex;
+  padding: 40px;
+  flex-flow: wrap; 
+  align-items: center; 
+  border: 1px rgb(46, 47, 47) solid; 
+  margin: 10px 0px;
+}
+
+.details {
+  /* border: blue 1px solid; */
+  display: flex;
+  flex-flow: wrap; 
+  align-items: center; 
+}
+
+
+

@@ -1,24 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="new_form">
     <form action="/works/{{ work.id }}" method="post">
         <div>
             <label for="title">Title:</label>
             <input type="text" name="title" id="title" value="{{ work.title }}" required autofocus>
         </div>
-
+<br>
         <div>
-            <label for="artist">Artist::</label>
+            <label for="artist">Artist:</label>
             <input type="text" name="artist" id="artist" value="{{ work.artist}}" required>
         </div>
-
+<br>
         <div>
             <label for="year">Year:</label>
             <input type="number" name="year" id="year" value="{{ work.year}}" required>
         </div>
-
+<br>
         <div>
-            <label for="museum">Museum</label>
+            <label for="museum">Museum:</label>
             <select name="museum_id" id="museum">
                 {% for museum in all_museums  %}
                     <option value="{{ museum.id }}" 
@@ -28,12 +29,13 @@
                 {% endfor %}
             </select>
         </div>
-
+<br>
         <div>
             <button type="submit">Update work</button>
         </div>
 
     </form>
+</div>
 
 
 {% endblock content %}

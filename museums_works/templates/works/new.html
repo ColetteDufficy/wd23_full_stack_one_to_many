@@ -1,34 +1,39 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="new_form">
 <form action="/works" method="post">
 
   <div>
-    <label for="title">Title:</label>
+    <label for="title">Title of work:</label>
     <input type="text" id="title" name="title" placeholder="Title" required autofocus />
   </div>
-
+<br>
   <div>
     <label for="artist">Artist:</label>
     <input type="text" id="artist" name="artist" placeholder="Artist" required />
   </div>
-
+<br>
   <div>
     <label for="year">Year:</label>
     <input type="number" id="year" name="year" placeholder="Year" required />
   </div>
+<br>
 
   <div>
-    <label for="museum">Museum:</label>
+    <label for="museum">Displayed at:</label>
+    <br>
     <select id="museum" name="museum_id">
       {% for museum in all_museums %}
         <option value="{{ museum.id }}">{{ museum.name }}</option>
       {% endfor %}
     </select>
   </div>
+<br>
 
   <button type="submit">Add Work of Art</button>
 
 </form>
+</div>
 
 {% endblock %}

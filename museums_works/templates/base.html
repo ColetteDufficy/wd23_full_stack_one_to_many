@@ -8,11 +8,16 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <title>Works of Art Manager</title>
 </head>
+
 <body>
+
   <header>
+    <!-- <h4 id="logo">Works of Art Manager</h4> -->
+    <h4 id="logo"> <a href="/">Works of Art Manager</h4></a>
+      
     <nav>
       <ul class="menu">
-        <li><a href="/">Home</a></li>
+        <!-- <li><a href="/">Home</a></li> -->
         <li><a href="/museums">Museums</a></li>
         <li><a href="/museums/new">New Museum</a></li>
         <li><a href="/works">Works of Art</a></li>
@@ -20,6 +25,7 @@
       </ul>
     </nav>
   </header>
+
   <div class="container">
     {% block content %}
     {% endblock %}
@@ -27,5 +33,7 @@
 
   {%block home%}
   {% endblock %}
+
+
 </body>
 </html>

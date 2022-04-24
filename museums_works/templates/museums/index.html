@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container_details">
 
 {% for museum in all_museums %}
-  <div>
-    <div>
-      <a href="/museums/{{museum.id}}">{{museum.name}}</a>
-      <address>
-        {{museum.address}}
-      </address>
-    </div>
 
-    <div class="buttons">
+<div class="full_item">
+
+  <div class="details">
+    <div class="the_image">
+
+      <h4>{{museum.name}}</h4>
+      <p>{{museum.address}}</p>
+
       <form action="/museums/{{museum.id}}/edit" method="GET">
         <input type="submit" value="Edit">
       </form>
@@ -22,11 +23,12 @@
         <input type="submit" value="Delete">
       </form>
 
-      <!-- <p><a href="/museums/{{museum.id}}/edit">Edit</a></p> -->
-    </div>
-
+</div>
   </div>
+</div>
   <hr>
 {% endfor %}
+
+</div>
 
 {% endblock %}

@@ -2,39 +2,44 @@
 {% block content %}
 
 
+<div class="container_details">
+
+
 {% for work in all_works %}
-  <div>
-  </div>
   
-  
-  <div>
-    <div>
-      <a href="/works/{{work.id}}">{{ work.title }}</a>
-      <!-- <a href="/works/&&work.id&&">&&work.get_details()&&</a> -->
-      <address>
-        <p>Artist: {{work.artist}}</p>
-        <p>{{ work.year }}</p>
-        <p>On display at: {{work.museum.name}}</p>
-      </address>
+<div class="full_item">
+
+  <div class="details">
+      <div class="the_image">
+        <img src="/static/lady_in_black.jpg" alt="" width="300px">
+        
+        <a href="/works/{{work.id}}"><h4>{{ work.title }}</h4></a>
+        
+          <p>{{work.artist}}</p>
+          <p>{{ work.year }}</p>
+          <p>{{work.museum.name}}</p>        
+          
+          <!-- <div class="buttons"> -->
+            <form action="/works/{{work.id}}/edit" method="GET">
+              <input type="submit" value="Edit">
+            </form>
+            
+            <br>
+            
+            <form action="/works/{{work.id}}/delete" method="POST">
+              <input type="submit" value="Delete">
+            </form>
+
+      </div>
     </div>
 
-    <div class="buttons">
-      <form action="/works/{{work.id}}/edit" method="GET">
-        <input type="submit" value="Edit">
-      </form>
-    
-    <br>
+  </div> 
 
-      <form action="/works/{{work.id}}/delete" method="POST">
-        <input type="submit" value="Delete">
-      </form>
-
-    </div>
-
-  </div>
+ 
   <hr>
 
 
 {% endfor %}
+</div>
 
 {% endblock %}
